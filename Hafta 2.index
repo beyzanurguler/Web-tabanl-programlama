@@ -44,9 +44,13 @@
 </nav>
 
 <section id="bolum1">
-    <h2>Bölüm 1: Altın Ormanın Sırrı</h2>
+    <h2>Bölüm 1: Altın Elma Ağacı</h2>
     <img src="img/orman.jpg" alt="Ormanın Derinlikleri">
-    <p>Bir zamanlar, büyük ve gizemli bir ormanın derinliklerinde bir tavşan yaşardı. Her gün yeni maceralara atılmayı severdi.</p>
+    <p>Bir zamanlar küçük bir köyde, herkesin dilinden düşmeyen bir altın elma ağacı vardı. Bu ağaç, köyün ortasında yer alır ve her yıl sadece tek bir altın elma verirdi. Ancak bu elmayı koparmak o kadar kolay değildi. Efsaneye göre, elmayı yalnızca kalbi tamamen temiz olan biri koparabilirdi.
+
+Bir gün köyden genç bir kız olan Elif, elmayı koparmaya karar verdi. Herkes onun cesaretine hayrandı, ancak başarılı olacağına dair şüpheler vardı. Elif, ağacın yanına gidip içten bir dua ettikten sonra elini uzattı ve elma, sihirli bir şekilde onun avucuna düştü.
+
+Köylüler şaşkındı. Elif'in kalbinin ne kadar temiz olduğunu anlayarak ona saygı duydular. Altın elmayı ihtiyacı olanlara dağıttı ve köyde barış ve mutluluk hakim oldu.i.</p>
 </section>
 
 <section id="bolum2">
