@@ -2,19 +2,22 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <!-- Sayfanın karakter setini belirtiyoruz, Türkçe karakterler için UTF-8 kullanıyoruz. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Sayfanın mobil cihazlarda düzgün görünmesi için viewport ayarlarını yapıyoruz. -->
-    <title>Haftalık Ders Programı</title>
-    <!-- Sayfanın başlık kısmı, tarayıcı sekmesinde görünecek olan metin. -->
+    <title>Haftalık Ders Programı ve Form</title>
     <style>
-        /* Sayfanın stil ayarlarını yapıyoruz */
+        /* Sayfanın genel stil ayarları */
         body {
             font-family: Arial, sans-serif;
             background-color: #8470ff;
             padding: 20px;
         }
 
+        /* Başlık stil ayarları */
+        h1 {
+            color: #333;
+        }
+
+        /* Tablo stil ayarları */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -36,47 +39,111 @@
         td {
             background-color: #f9f9f9;
         }
+
+        /* Form stil ayarları */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        form p {
+            margin: 10px 0;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
-    <h1>Haftalık Ders Programı</h1>
-    <!-- Sayfa başlığını büyük bir başlık olarak yazıyoruz. -->
+    <h1>Lütfen Formu Eksiksiz Doldurunuz</h1>
+    <hr>
+    <form>
+        <h4>Hesap Bilgileriniz</h4>
+        <p>
+            Kullanıcı Adı: <input type="text" name="username" placeholder="Kullanıcı adı giriniz" required>
+        </p>
+        <p>
+            Eposta: <input type="email" name="eposta" placeholder="Eposta giriniz" required>
+        </p>
+        <p>
+            Parola: <input type="password" name="parola" placeholder="Parola giriniz" required>
+        </p>
+        <h4>Kişisel Bilgileriniz</h4>
+        <p>
+            Ad: <input type="text" name="ad">
+        </p>
+        <p>
+            Soyad: <input type="text" name="soyad">
+        </p>
+        <p>
+            Şehir: 
+            <select name="sehir">
+                <option>Seçiniz</option>
+                <option>Ankara</option>
+                <option>İstanbul</option>
+                <option>Kocaeli</option>
+            </select>
+        </p>
+        <p>
+            Cinsiyet: 
+            <input type="radio" name="cinsiyet" value="Erkek"> Erkek
+            <input type="radio" name="cinsiyet" value="Kadın"> Kadın
+        </p>
+        <p>
+            Hobileriniz: 
+            <input type="checkbox" name="hobiler" value="Sinema"> Sinema
+            <input type="checkbox" name="hobiler" value="Gezmek"> Gezmek
+            <input type="checkbox" name="hobiler" value="Spor"> Spor
+            <input type="checkbox" name="hobiler" value="Kitap"> Kitap
+        </p>
+        <input type="submit" value="Kaydet">
+    </form>
 
+    <h1>Haftalık Ders Programı</h1>
     <table>
-        <!-- Tablo oluşturuyoruz. -->
         <thead>
-            <!-- Tablo başlık kısmını belirtiyoruz. -->
             <tr>
-                <!-- Bir satır oluşturuyoruz. -->
                 <th>Gün</th>
-                <!-- İlk sütun için başlık, bu sütunda günler olacak. -->
                 <th>1. Ders</th>
-                <!-- 1. ders saati için başlık. -->
                 <th>2. Ders</th>
-                <!-- 2. ders saati için başlık. -->
                 <th>3. Ders</th>
-                <!-- 3. ders saati için başlık. -->
                 <th>4. Ders</th>
-                <!-- 4. ders saati için başlık. -->
                 <th>5. Ders</th>
-                <!-- 5. ders saati için başlık. -->
             </tr>
         </thead>
         <tbody>
-            <!-- Tablo gövdesi, veriler burada olacak. -->
             <tr>
                 <td>Pazartesi</td>
-                <!-- İlk sütun gün adı. -->
                 <td>Matematik</td>
-                <!-- 1. ders: Matematik -->
                 <td>Türkçe</td>
-                <!-- 2. ders: Türkçe -->
                 <td>Fen Bilimleri</td>
-                <!-- 3. ders: Fen Bilimleri -->
                 <td>Sosyal Bilgiler</td>
-                <!-- 4. ders: Sosyal Bilgiler -->
                 <td>İngilizce</td>
-                <!-- 5. ders: İngilizce -->
             </tr>
             <tr>
                 <td>Salı</td>
@@ -114,3 +181,4 @@
     </table>
 </body>
 </html>
+
