@@ -1,0 +1,40 @@
+/* Genel stil ayarları */
+body {
+    background-color: rgba(255, 255, 255, 0.5); /* Şeffaf arka plan */
+    display: flex; /* Daireleri yatay olarak yerleştirmek için */
+    justify-content: center; /* Merkeze hizalama */
+    align-items: center; /* Dikey olarak ortalama */
+    height: 100vh; /* Tüm ekran yüksekliği */
+    margin: 0; /* Varsayılan margin'i kaldır */
+    position: relative; /* Dairelerin konumlandırılması için gerekli */
+}
+
+/* Daireler için stil ayarları */
+.circle {
+    width: 150px; /* Dairenin genişliği */
+    height: 150px; /* Dairenin yüksekliği */
+    border-radius: 50%; /* Daire şeklini oluşturma */
+    position: absolute; /* Kesişme için konumlandırma */
+    opacity: 0.8; /* Şeffaflık */
+}
+
+/* Kırmızı daire */
+.red {
+    background-color: rgba(255, 0, 0, 0.7); /* Kırmızı daire */
+    left: 40%; /* Dairenin sol kenarının konumu */
+    top: 35%; /* Dairenin üst kenarının konumu */
+}
+
+/* Mavi daire */
+.blue {
+    background-color: rgba(0, 0, 255, 0.7); /* Mavi daire */
+    left: 48%; /* Dairenin sol kenarının konumu, biraz sola alındı */
+    top: 30%; /* Dairenin üst kenarının konumu */
+}
+
+/* Sarı daire */
+.yellow {
+    background-color: rgba(255, 255, 0, 0.7); /* Sarı daire */
+    left: 45%; /* Dairenin sol kenarının konumu */
+    top: 55%; /* Dairenin üst kenarının konumu */
+}
