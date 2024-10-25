@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Membership Form</title>
+    <title>Üyelik ve Test Sayfası</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e0f7fa; /* Hafif mavi ton */
+            background-color: #e0f7fa; /* Açık mavi arka plan rengi */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            justify-content: space-evenly;
+            padding: 20px;
         }
-        .form-container {
+        .container {
             background: #fff;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            width: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 40%;
         }
-        .form-container h2 {
+        h2 {
             text-align: center;
-            margin-bottom: 20px;
-            color: #00796b; /* Başlık rengi */
+            color: #333;
         }
-        .form-container label {
+        .container label {
             display: block;
             margin: 10px 0 5px;
         }
-        .form-container input[type="text"],
-        .form-container input[type="email"],
-        .form-container input[type="password"] {
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"],
+        .container input[type="number"],
+        .container select,
+        .container textarea {
             width: 100%;
             padding: 10px;
             margin: 5px 0 15px;
-            border: 1px solid #b2dfdb;
+            border: 1px solid #ddd;
             border-radius: 6px;
-            box-sizing: border-box;
         }
-        .form-container input[type="submit"] {
+        .container input[type="radio"],
+        .container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .container input[type="submit"] {
             width: 100%;
             padding: 12px;
             border: none;
@@ -49,26 +52,69 @@
             cursor: pointer;
             font-size: 16px;
         }
-        .form-container input[type="submit"]:hover {
+        .container input[type="submit"]:hover {
             background: #004d40;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Membership Form</h2>
-        <form action="submit_form.php" method="post">
-            <label for="name">Name:</label>
+
+    <!-- Üyelik Formu -->
+    <div class="container">
+        <h2>Üyelik Formu</h2>
+        <form action="submit_membership.php" method="post">
+            <label for="name">Ad Soyad:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Email:</label>
+            <label for="email">E-posta:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="password">Password:</label>
+            <label for="password">Şifre:</label>
             <input type="password" id="password" name="password" required>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Gönder">
         </form>
     </div>
+
+    <!-- Sınav Formu -->
+    <div class="container">
+        <h2>Sınav Formu</h2>
+        <form action="submit_exam.php" method="post">
+            <label for="fullname">Ad Soyad:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="age">Yaş:</label>
+            <input type="number" id="age" name="age" min="10" max="99" required>
+
+            <h3>1. Soru: HTML nedir?</h3>
+            <input type="radio" id="html1" name="q1" value="1" required>
+            <label for="html1">Bir programlama dilidir.</label><br>
+            <input type="radio" id="html2" name="q1" value="2">
+            <label for="html2">Bir işaretleme dilidir.</label><br>
+            <input type="radio" id="html3" name="q1" value="3">
+            <label for="html3">Bir veri tabanı dilidir.</label><br>
+
+            <h3>2. Soru: CSS ne işe yarar?</h3>
+            <textarea id="q2" name="q2" rows="3" required></textarea>
+
+            <h3>3. Soru: JavaScript ile yapılabilecekler (Birden fazla seçim yapabilirsiniz)</h3>
+            <input type="checkbox" id="js1" name="q3[]" value="1">
+            <label for="js1">Web sayfalarına etkileşim katmak</label><br>
+            <input type="checkbox" id="js2" name="q3[]" value="2">
+            <label for="js2">Veri tabanları yönetmek</label><br>
+            <input type="checkbox" id="js3" name="q3[]" value="3">
+            <label for="js3">Stil yönetimi</label><br>
+
+            <h3>4. Soru: Kaç yıldır web programcılığı yapıyorsunuz?</h3>
+            <input type="number" id="experience" name="experience" min="0" max="50" required>
+
+            <h3>5. Soru: Bir dosya yükleyin</h3>
+            <input type="file" id="file" name="file" required>
+
+            <input type="submit" value="Sınavı Gönder">
+        </form>
+    </div>
+
 </body>
 </html>
+
