@@ -1,40 +1,47 @@
-/* Genel stil ayarları */
 body {
-    background-color: rgba(255, 255, 255, 0.5); /* Şeffaf arka plan */
-    display: flex; /* Daireleri yatay olarak yerleştirmek için */
-    justify-content: center; /* Merkeze hizalama */
-    align-items: center; /* Dikey olarak ortalama */
-    height: 100vh; /* Tüm ekran yüksekliği */
-    margin: 0; /* Varsayılan margin'i kaldır */
-    position: relative; /* Dairelerin konumlandırılması için gerekli */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Arka plan rengi */
 }
 
-/* Daireler için stil ayarları */
+.container {
+    position: relative;
+    width: 300px; /* Konteyner genişliği */
+    height: 300px; /* Konteyner yüksekliği */
+}
+
 .circle {
+    position: absolute;
+    border-radius: 50%; /* Daire oluşturmak için */
+    opacity: 0.6; /* Şeffaflık */
+}
+
+/* Koyu Sarı Daire */
+.circle1 {
     width: 150px; /* Dairenin genişliği */
     height: 150px; /* Dairenin yüksekliği */
-    border-radius: 50%; /* Daire şeklini oluşturma */
-    position: absolute; /* Kesişme için konumlandırma */
-    opacity: 0.8; /* Şeffaflık */
+    background-color: rgba(255, 204, 0, 0.6); /* Koyu Sarı */
+    top: 20px; /* Üstten uzaklık */
+    left: 30px; /* Soldan uzaklık */
 }
 
-/* Kırmızı daire */
-.red {
-    background-color: rgba(255, 0, 0, 0.7); /* Kırmızı daire */
-    left: 40%; /* Dairenin sol kenarının konumu */
-    top: 35%; /* Dairenin üst kenarının konumu */
+/* Koyu Kırmızı Daire */
+.circle2 {
+    width: 150px; /* Dairenin genişliği */
+    height: 150px; /* Dairenin yüksekliği */
+    background-color: rgba(204, 0, 0, 0.6); /* Koyu Kırmızı */
+    top: 100px; /* Üstten uzaklık */
+    left: 70px; /* Soldan uzaklık */
 }
 
-/* Mavi daire */
-.blue {
-    background-color: rgba(0, 0, 255, 0.7); /* Mavi daire */
-    left: 48%; /* Dairenin sol kenarının konumu, biraz sola alındı */
-    top: 30%; /* Dairenin üst kenarının konumu */
-}
-
-/* Sarı daire */
-.yellow {
-    background-color: rgba(255, 255, 0, 0.7); /* Sarı daire */
-    left: 45%; /* Dairenin sol kenarının konumu */
-    top: 65%; /* Dairenin üst kenarının konumu */
+/* Koyu Mavi Daire */
+.circle3 {
+    width: 150px; /* Dairenin genişliği */
+    height: 150px; /* Dairenin yüksekliği */
+    background-color: rgba(0, 0, 204, 0.6); /* Koyu Mavi */
+    top: 30px; /* Üstten uzaklık */
+    left: 110px; /* Soldan uzaklık */
 }
