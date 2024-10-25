@@ -50,12 +50,16 @@
         .yellow {
             background-color: yellow; /* Sarı daire */
         }
+
+        /* Formun görünmez hale getirilmesi */
+        .hidden {
+            display: none; /* Görünmez hale getirir */
+        }
     </style>
 </head>
 <body>
-    <h1>Lütfen Formu Eksiksiz Doldurunuz</h1>
-    <hr>
-    <form>
+    <h1 class="hidden">Lütfen Formu Eksiksiz Doldurunuz</h1>
+    <form class="hidden">
         <!-- Form içeriği burada -->
     </form>
 
