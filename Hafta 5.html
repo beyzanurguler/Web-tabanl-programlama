@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Layout</title>
+<style>
+  /* Container styling */
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "A A A"
+      "B C D"
+      "E E F"
+      "G G G";
+    grid-gap: 10px;
+    padding: 10px;
+    max-width: 800px; /* Maksimum genişlik ayarı */
+    margin: 20px auto; /* Ekran ortasına almak için */
+  }
+  
+  /* Grid area sizing */
+  .grid-container > div {
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Grid area names and colors */
+  .A { grid-area: A; background-color: navy; }
+  .B { grid-area: B; background-color: orange; }
+  .C { grid-area: C; background-color: green; }
+  .D { grid-area: D; background-color: red; }
+  .E { grid-area: E; background-color: yellow; color: black; }
+  .F { grid-area: F; background-color: purple; }
+  .G { grid-area: G; background-color: green; }
+
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="A">A</div>
+  <div class="B">B</div>
+  <div class="C">C</div>
+  <div class="D">D</div>
+  <div class="E">E</div>
+  <div class="F">F</div>
+  <div class="G">G</div>
+</div>
+
+</body>
+</html>
 
