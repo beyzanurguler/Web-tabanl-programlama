@@ -1,64 +1,42 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <title>Hafta2- Beyzanur Güler</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Times New Roman', sans-serif;
-            background-color: #adadad;
-            margin: 20px;
-            padding: 20px;
-        }
-        nav {
-            margin-bottom: 20px;
-        }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #007BFF;
-        }
-        section {
-            margin-bottom: 40px;
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .audio-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-        }
-        .audio-button img {
-            width: 100%;
-            height: auto;
-        }
-        audio {
-            display: none;
-        }
-    </style>
-    <script>
-        function toggleAudio(audioId, buttonId) {
-            var audio = document.getElementById(audioId);
-            var button = document.getElementById(buttonId);
-            if (audio.paused) {
-                audio.play();
-                button.src = "pause-icon.png"; // Change to pause icon
-            } else {
-                audio.pause();
-                button.src = "play-icon.png"; // Change back to play icon
-            }
-        }
-    </script>
+<title>Hafta2- Beyzanur Güler</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hikayeler</title>
+<style>
+    body {
+        font-family: 'Times New Roman', sans-serif;
+        background-color: #adadad;
+        margin: 20px;
+        padding: 20px;
+    }
+    nav {
+        margin-bottom: 20px;
+    }
+    nav a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: #007BFF;
+    }
+    section {
+        margin-bottom: 40px;
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    #denizYildizi {
+        width: 300px;
+        height: auto;
+    }
+</style>
 </head>
 <body>
 
@@ -70,12 +48,7 @@
 </nav>
 
 <section id="bolum1">
-    <h2>Bölüm 1: Altın Elma Ağacı 
-        <button class="audio-button" onclick="toggleAudio('audio1', 'button1')">
-            <img id="button1" src="play-icon.png" alt="Play Icon">
-        </button>
-        <audio id="audio1" src="Altin_Elma_Agaci_Ses.mp3"></audio>
-    </h2>
+    <h2>Bölüm 1: Altın Elma Ağacı</h2>
     <img src="Altın Elma Ağacı.jpg" alt="Altın Elma Ağacı">
     <p>Bir zamanlar küçük bir köyde, herkesin dilinden düşmeyen bir altın elma ağacı vardı. Bu ağaç, köyün ortasında yer alır ve her yıl sadece tek bir altın elma verirdi. Ancak bu elmayı koparmak o kadar kolay değildi. Efsaneye göre, elmayı yalnızca kalbi tamamen temiz olan biri koparabilirdi.</p>
     <p>Bir gün köyden genç bir kız olan Elif, elmayı koparmaya karar verdi. Herkes onun cesaretine hayrandı, ancak başarılı olacağına dair şüpheler vardı. Elif, ağacın yanına gidip içten bir dua ettikten sonra elini uzattı ve elma, sihirli bir şekilde onun avucuna düştü.</p>
@@ -83,13 +56,8 @@
 </section>
 
 <section id="bolum2">
-    <h2>Bölüm 2: Kayıp Deniz Yıldızı 
-        <button class="audio-button" onclick="toggleAudio('audio2', 'button2')">
-            <img id="button2" src="play-icon.png" alt="Play Icon">
-        </button>
-        <audio id="audio2" src="Kayip_Deniz_Yildizi_Ses.mp3"></audio>
-    </h2>
-    <img src="Deniz Yıldızı-jpg.webp" alt="Kayıp Deniz Yıldızı">
+    <h2>Bölüm 2: Kayıp Deniz Yıldızı</h2>
+    <img id="denizYildizi" src="Deniz Yıldızı-jpg.webp" alt="Kayıp Deniz Yıldızı">
     <p>Bir zamanlar büyük bir okyanusun kenarındaki küçük bir kasabada, Ali adında meraklı bir çocuk yaşardı. Her gün sabah erkenden deniz kenarına gider, dalgaların kıyıya getirdiği deniz kabuklarını ve taşları toplardı. Bir sabah, dalgaların arasından minik bir deniz yıldızı kıyıya vurmuştu. Ali, yıldızı eline aldı ve onun denize geri dönmesi gerektiğini düşündü.</p>
     <p>Ancak o sırada sahilde başka bir çocuk, “Bu yıldızı al ve koleksiyonuna ekle, denizde daha milyonlarca var. Bir tanesi eksik olsa ne olur?” dedi.</p>
     <p>Ali, deniz yıldızına baktı ve onu tekrar suya bırakırken şöyle cevap verdi: "Belki milyonlarca deniz yıldızı vardır, ama bu bir tanesi için fark yaratabilir."</p>
@@ -97,12 +65,7 @@
 </section>
 
 <section id="bolum3">
-    <h2>Bölüm 3: Kaplumbağa ile Tavşan 
-        <button class="audio-button" onclick="toggleAudio('audio3', 'button3')">
-            <img id="button3" src="play-icon.png" alt="Play Icon">
-        </button>
-        <audio id="audio3" src="Kaplumbaga_ve_Tavsang_Ses.mp3"></audio>
-    </h2>
+    <h2>Bölüm 3: Kaplumbağa ile Tavşan</h2>
     <img src="Kaplumbağa ve Tavşan.jpeg" alt="Kaplumbağa ile Tavşan">
     <p>Ormanların birinde kendisiyle çok övünen bir tavşan varmış.</p>
     <p>– Bu ormanda benden hızlı koşan yoktur. Varsa gelsin yarışalım, diye hava atıyormuş. Kaplumbağa bir gün;</p>
@@ -115,21 +78,17 @@
 </section>
 
 <section id="bolum4">
-    <h2>Bölüm 4: Aslan ile Fare 
-        <button class="audio-button" onclick="toggleAudio('audio4', 'button4')">
-            <img id="button4" src="play-icon.png" alt="Play Icon">
-        </button>
-        <audio id="audio4" src="Aslan_ve_Fare_Ses.mp3"></audio>
-    </h2>
+    <h2>Bölüm 4: Aslan ile Fare</h2>
     <img src="Aslan ile Fare.jpeg" alt="Aslan ile Fare">
     <p>Ormanlar kralı aslan ormanda bir gün avlanmaktan gelmiş, yatmış uyuyormuş. Minik bir fare aslanın üzerinde dolaşmaya başlamış. Aslan sinirlenerek uyanıp fareyi yakalamış. Tam öldüreceği sırada fare yalvarmış:</p>
     <p>– Ne olur beni bırak! Gün olur benim de sana bir iyiliğim dokunur, demiş.</p>
     <p>Aslan farenin bu sözlerine gülerek:</p>
     <p>– Sen küçük bir faresin, bana ne iyiliğin dokunur ki, deyip fareye acımış ve fareyi bırakmış. Fare sevinerek oradan uzaklaşmış.</p>
-    <p>Aradan zaman geçmiş, Aslan bir gün avcıların kurduğu tuzağa yakalanmış.
-
+    <p>Aradan zaman geçmiş, Aslan bir gün avcıların kurduğu tuzağa yakalanmış. Aslan çırpınmış, bağırmış ama tuzaktan bir türlü kurtulamamış. Oradan geçmekte olan minik fare aslanın bu durumunu görmüş. Hemen dişleriyle tuzağın iplerini kemirerek kesmiş ve aslanı tuzaktan kurtarmış.</p>
+    <p>Fare aslana:</p>
+    <p>– Beni küçük diye beğenmiyordun. Bak, senin canını kurtardım, demiş. Aslan, böylece yapılan bir iyiliğin karşılıksız kalmayacağını anlamış.</p>
+</section>
 
 </body>
 </html>
-
 
