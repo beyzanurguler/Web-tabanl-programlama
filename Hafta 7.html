@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastgele Arka Plan ve Resim Gösterme</title>
+    <style>
+        /* Body için genel stil */
+        body {
+            transition: background-image 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Resimler ve butonlar için genel stil */
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image {
+            display: none;
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="resim1.jpg" alt="Resim 1" class="image" id="img1">
+        <img src="resim2.jpg" alt="Resim 2" class="image" id="img2">
+        <img src="resim3.jpg" alt="Resim 3" class="image" id="img3">
+    </div>
+
+    <div class="buttons">
+        <button onclick="toggleImage('img1')">Resim 1 Göster/Gizle</button>
+        <button onclick="toggleImage('img2')">Resim 2 Göster/Gizle</button>
+        <button onclick="toggleImage('img3')">Resim 3 Göster/Gizle</button>
+    </div>
+
+    <script>
+        // 10 farklı arka plan resmi dizisi
+        const backgrounds = [
+            "arkaplan1.jpg",
+            "arkaplan2.jpg",
+            "arkaplan3.jpg",
+            "arkaplan4.jpg",
+            "arkaplan5.jpg",
+            "arkaplan6.jpg",
+            "arkaplan7.jpg",
+            "arkaplan8.jpg",
+            "arkaplan9.jpg",
+            "arkaplan10.jpg"
+        ];
+
+        // Sayfa yenilendiğinde rastgele bir arka plan seç ve uygula
+        function setRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            document.body.style.backgroundImage = `url('${backgrounds[randomIndex]}')`;
+        }
+
+        // Belirli bir resmi göster/gizle işlevi
+        function toggleImage(id) {
+            const img = document.getElementById(id);
+            if (img.style.display === "none" || img.style.display === "") {
+                img.style.display = "block";
+            } else {
+                img.style.display = "none";
+            }
+        }
+
+        // Sayfa yüklendiğinde rastgele arka planı ayarla
+        window.onload = setRandomBackground;
+    </script>
+</body>
+</html>
 
