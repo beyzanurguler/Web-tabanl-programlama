@@ -8,7 +8,8 @@
         /* Body için genel stil */
         body {
             transition: background-image 0.5s ease-in-out;
-            background-size: cover;
+            background-size: auto 70%; /* Arka plan resminin boyutunu ayarla */
+            background-repeat: no-repeat; /* Resmi tekrar ettirmeden ortala */
             background-position: center;
             font-family: Arial, sans-serif;
         }
@@ -73,7 +74,7 @@
         // Sayfa yenilendiğinde rastgele bir arka plan seç ve uygula
         function setRandomBackground() {
             const randomIndex = Math.floor(Math.random() * backgrounds.length);
-            document.body.style.backgroundImage = `url('${backgrounds[randomIndex]}')`;
+            document.body.style.backgroundImage = url('${backgrounds[randomIndex]}');
         }
 
         // Belirli bir resmi göster/gizle işlevi
@@ -91,4 +92,3 @@
     </script>
 </body>
 </html>
-
