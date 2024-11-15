@@ -7,9 +7,7 @@
     <style>
         /* Body için genel stil */
         body {
-            transition: background-image 0.5s ease-in-out;
-            background-size: cover;
-            background-position: center;
+            transition: background-color 0.5s ease-in-out;
             font-family: Arial, sans-serif;
         }
 
@@ -50,44 +48,34 @@
     </div>
 
     <div class="buttons">
-        <button onclick="toggleImage('img1')">Resim 1 Göster/Gizle</button>
-        <button onclick="toggleImage('img2')">Resim 2 Göster/Gizle</button>
-        <button onclick="toggleImage('img3')">Resim 3 Göster/Gizle</button>
+        <button onclick="toggleImage('img1', 'green')">Resim 1 Göster/Gizle</button>
+        <button onclick="toggleImage('img2', 'blue')">Resim 2 Göster/Gizle</button>
+        <button onclick="toggleImage('img3', 'yellow')">Resim 3 Göster/Gizle</button>
     </div>
 
     <script>
-        // 10 farklı arka plan resmi dizisi
-        const backgrounds = [
-            "Ağaç Arkaplanı.jpg",
-            "Gökyüzü Arkaplanı.jpg",
-            "Kutu Arkaplanı.jpg",
-            "Manzara Arkaplanı.jpg",
-            "Lamba Arkaplanı.jpg",
-            "Kar Arkaplanı.jpg",
-            "Kum Arkaplanı.jpg",
-            "Yıldız Arkaplanı.jpg",
-            "Orman Arkaplanı.jpg",
-            "Okyanus Arkaplanı.jpg"
-        ];
-
-        // Sayfa yenilendiğinde rastgele bir arka plan seç ve uygula
+        // Sayfa yenilendiğinde rastgele bir renk seç ve uygula
         function setRandomBackground() {
-            const randomIndex = Math.floor(Math.random() * backgrounds.length);
-            document.body.style.backgroundImage = url('${backgrounds[randomIndex]}');
+            const colors = ['green', 'blue', 'yellow', 'red', 'orange', 'purple', 'pink', 'brown', 'grey', 'lightblue'];
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[randomIndex];
         }
 
-        // Belirli bir resmi göster/gizle işlevi
-        function toggleImage(id) {
+        // Belirli bir resmi göster/gizle ve arka plan rengini değiştir
+        function toggleImage(id, color) {
             const img = document.getElementById(id);
             if (img.style.display === "none" || img.style.display === "") {
                 img.style.display = "block";
+                document.body.style.backgroundColor = color;
             } else {
                 img.style.display = "none";
             }
         }
 
-        // Sayfa yüklendiğinde rastgele arka planı ayarla
+        // Sayfa yüklendiğinde rastgele arka plan rengini ayarla
         window.onload = setRandomBackground;
     </script>
 </body>
+</html>
+
 
