@@ -12,7 +12,7 @@
             align-items: center;
             flex-direction: column;
             height: 100vh;
-            background-color: #f0e68c;
+            background-color: #f0e68c; /* Daha güzel bir arka plan rengi */
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -29,11 +29,12 @@
     <h1>My First Web Page</h1>
     <h2>My First Paragraph</h2>
 
-    <button onclick="document.getElementById('resim').src='Işık Resmi Açık.jpg'">Turn on the light</button>
+    <!-- Işık açma ve kapama butonları -->
+    <button onclick="document.getElementById('resim').src='Işık Açık.jpg'">Turn on the light</button>
 
-    <img id="resim" src="pic_bulboff.gif" style="width:100px">
+    <img id="resim" src="Işık Kapalı.jpg" style="width:100px">
 
-    <button onclick="document.getElementById('resim').src='Işık Resmi Kapalı.jpg'">Turn off the light</button>
+    <button onclick="document.getElementById('resim').src='Işık Kapalı.jpg'">Turn off the light</button>
 
     <script>
         console.log(5 + 6);
@@ -41,3 +42,4 @@
 
 </body>
 </html>
+
