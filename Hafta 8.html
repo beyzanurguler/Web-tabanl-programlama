@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duyuru Penceresi</title>
+    <style>
+        /* Sayfa arka planı */
+        body {
+            background-color: #f0f0f0; /* Açık gri arka plan */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Duyuru penceresi tasarımı */
+        .duyuru {
+            visibility: hidden; /* Varsayılan olarak görünmez */
+            opacity: 0; /* Saydamlık sıfır */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50; /* Duyuru penceresi rengi (yeşil) */
+            color: white; /* Yazı rengi */
+            padding: 15px;
+            border-radius: 5px;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Görünür hale gelen pencere */
+        .duyuru.gorunur {
+            visibility: visible; /* Görünür yap */
+            opacity: 1; /* Saydamlık tam */
+        }
+    </style>
+</head>
+<body>
+    <!-- Duyuru Penceresi -->
+    <div id="duyuruPenceresi" class="duyuru">
+        Bu bir duyuru mesajıdır!
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const duyuru = document.getElementById("duyuruPenceresi");
+
+            // Pencereyi görünür yap
+            setTimeout(() => {
+                duyuru.classList.add("gorunur");
+            }, 1000); // 1 saniye sonra aç
+
+            // Pencereyi otomatik kapat
+            setTimeout(() => {
+                duyuru.classList.remove("gorunur");
+            }, 6000); // 5 saniye görünür kalacak (toplamda 6 saniye)
+        });
+    </script>
+</body>
+</html>
 
