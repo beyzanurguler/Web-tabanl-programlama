@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortalanmış ve Daha Net Renkli Kareler</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Sayfanın tam yüksekliği */
+            background-color: #eeeeee; /* Soft gri arka plan */
+        }
+
+        canvas {
+            border: 2px solid black;
+            background-color: white;
+            display: block; /* Tarayıcı uyumluluğu için */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const gridSize = 10; // 10x10 kareler
+        const squareSize = canvas.width / gridSize; // Kare boyutu
+
+        // Daha net ve canlı renkler için rastgele bir renk üretici
+        function getBrightColor() {
+            const r = Math.floor(Math.random() * 156) + 100; // 100-255 arası kırmızı
+            const g = Math.floor(Math.random() * 156) + 100; // 100-255 arası yeşil
+            const b = Math.floor(Math.random() * 156) + 100; // 100-255 arası mavi
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        // 10x10 kare çizme
+        for (let i = 0; i < gridSize; i++) {
+            for (let j = 0; j < gridSize; j++) {
+                const x = i * squareSize; // Karelerin x koordinatı
+                const y = j * squareSize; // Karelerin y koordinatı
+                ctx.fillStyle = getBrightColor(); // Daha net renk
+                ctx.fillRect(x, y, squareSize, squareSize); // Kare çiz
+            }
+        }
+    </script>
+</body>
+</html>
