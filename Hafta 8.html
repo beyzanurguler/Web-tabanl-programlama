@@ -18,14 +18,16 @@
             visibility: hidden; /* Varsayılan olarak görünmez */
             opacity: 0; /* Saydamlık sıfır */
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            top: 50%; /* Dikeyde ortala */
+            left: 50%; /* Yatayda ortala */
+            transform: translate(-50%, -50%); /* Tam merkezde hizala */
             background-color: #4CAF50; /* Duyuru penceresi rengi (yeşil) */
             color: white; /* Yazı rengi */
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
             transition: opacity 0.5s ease, visibility 0.5s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Görünür hale gelen pencere */
