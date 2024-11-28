@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & JavaScript Testi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
 
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f4f4f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .question p {
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>HTML ve JavaScript Testi</h1>
+        <div id="quiz"></div>
+        <button id="submit">Sonuçları Göster</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        const quizData = {
+            "quiz": {
+                "title": "HTML ve JavaScript Testi",
+                "questions": [
+                    {
+                        "question": "HTML neyin kısaltmasıdır?",
+                        "options": [
+                            "Hyper Text Markup Language",
+                            "High Text Machine Language",
+                            "Hyperlinks and Text Markup Language"
+                        ],
+                        "correct_answer": "Hyper Text Markup Language"
+                    },
+                    {
+                        "question": "HTML'de bir bağlantıyı tanımlamak için hangi etiket kullanılır?",
+                        "options": [
+                            "<a>",
+                            "<link>",
+                            "<a href>"
+                        ],
+                        "correct_answer": "<a>"
+                    },
+                    {
+                        "question": "Harici bir JavaScript dosyasını dahil etmenin doğru yolu nedir?",
+                        "options": [
+                            "<script src='file.js'></script>",
+                            "<script href='file.js'></script>",
+                            "<javascript src='file.js'></javascript>"
+                        ],
+                        "correct_answer": "<script src='file.js'></script>"
+                    },
+                    {
+                        "question": "Aşağıdakilerden hangisi geçerli bir JavaScript veri türü değildir?",
+                        "options": [
+                            "Number",
+                            "String",
+                            "Character"
+                        ],
+                        "correct_answer": "Character"
+                    },
+                    {
+                        "question": "JavaScript'teki 'this' anahtar kelimesi neyi ifade eder?",
+                        "options": [
+                            "Şu anda kodu çalıştıran nesneyi",
+                            "Pencere (window) nesnesini",
+                            "Şu anda çalıştırılan fonksiyonu"
+                        ],
+                        "correct_answer": "Şu anda kodu çalıştıran nesneyi"
+                    }
+                ]
+            }
+        };
+
+        const quizContainer = document.getElementById('quiz');
+        quizData.quiz.questions.forEach((questionData, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+
+            // Soru metni
+            const questionParagraph = document.createElement('p');
+            questionParagraph.textContent = ${index + 1}. ${questionData.question};
+            questionDiv.appendChild(questionParagraph);
+
+            // Seçenekler
+            const optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('options');
+            questionData.options.forEach(option => {
+                const label = document.createElement('label');
+                label.innerHTML = `
+                    <input type="radio" name="q${index}" value="${option}">
+                    ${option}
+                `;
+                optionsDiv.appendChild(label);
+            });
+
+            questionDiv.appendChild(optionsDiv);
+            quizContainer.appendChild(questionDiv);
+        });
+
+        document.getElementById('submit').addEventListener('click', () => {
+            let score = 0;
+            quizData.quiz.questions.forEach((questionData, index) => {
+                const selected = document.querySelector(input[name="q${index}"]:checked);
+                if (selected && selected.value === questionData.correct_answer) {
+                    score++;
+                }
+            });
+            document.getElementById('result').textContent = Sonuç: ${score} / ${quizData.quiz.questions.length};
+        });
+    </script>
+</body>
+</html>
