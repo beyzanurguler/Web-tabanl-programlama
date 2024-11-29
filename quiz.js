@@ -119,10 +119,10 @@ quizData.quiz.questions.forEach((questionData, index) => {
 document.getElementById('submit').addEventListener('click', () => {
     let score = 0;
     quizData.quiz.questions.forEach((questionData, index) => {
-        const selected = document.querySelector(input[name="q${index}"]:checked);
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
         if (selected && selected.value === questionData.correct_answer) {
             score++;
         }
     });
-    document.getElementById('result').textContent = Sonuç: ${score} / ${quizData.quiz.questions.length};
+    document.getElementById('result').textContent = `Sonuç: ${score} / ${quizData.quiz.questions.length}`;
 });
