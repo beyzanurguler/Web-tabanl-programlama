@@ -46,15 +46,18 @@
 </head>
 <body>
     <script>
-        // Rastgele arka plan resimleri
-        const backgrounds = [
-            'resim1.jpg', 'resim2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg',
-            'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg'
-        ];
+        // Rastgele arka plan renkleri
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
-        // Sayfa yenilendiğinde rastgele bir arka plan resmi seç
-        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-        document.body.style.backgroundImage = `url('${randomBackground}')`;
+        // Sayfa yenilendiğinde rastgele bir arka plan rengi ayarla
+        document.body.style.backgroundColor = getRandomColor();
 
         // Resimleri göster/gizle fonksiyonları
         function toggleImage(index) {
