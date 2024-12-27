@@ -3,84 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastgele Arka Plan ve Resim Gösterme</title>
+    <title>Rastgele Arka Plan ve Resimler</title>
     <style>
-        /* Body için genel stil */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
             margin: 0;
-            transition: background-color 0.5s ease-in-out;
+            padding: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
             font-family: Arial, sans-serif;
-            flex-direction: column; /* Vertikal olarak ortala */
         }
-
-        /* Resimler ve butonlar için genel stil */
         .container {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            margin-top: 20px;
+            height: 100%;
+            color: white;
+            text-shadow: 1px 1px 2px black;
         }
-
-        .image {
-            display: none;
-            width: 200px;
-            height: 150px;
-            margin: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-        }
-
-        .buttons {
+        .images {
             display: flex;
-            justify-content: center;
+            gap: 10px;
             margin-top: 20px;
         }
-
-        button {
-            margin: 0 10px;
-            padding: 10px 20px;
+        .images img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            display: none; /* Başlangıçta gizli */
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 10px;
             font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="Resim 1.jpg" alt="Resim 1" class="image" id="img1">
-        <img src="Resim 2.jpg" alt="Resim 2" class="image" id="img2">
-        <img src="Resim 3.jpg" alt="Resim 3" class="image" id="img3">
-    </div>
-
-    <div class="buttons">
-        <button onclick="toggleImage('img1', 'green')">Resim 1 Göster/Gizle</button>
-        <button onclick="toggleImage('img2', 'blue')">Resim 2 Göster/Gizle</button>
-        <button onclick="toggleImage('img3', 'yellow')">Resim 3 Göster/Gizle</button>
-    </div>
-
     <script>
-        // Sayfa yenilendiğinde rastgele bir renk seç ve uygula
-        function setRandomBackground() {
-            const colors = ['green', 'blue', 'yellow', 'red', 'orange', 'purple', 'pink', 'brown', 'grey', 'lightblue'];
-            const randomIndex = Math.floor(Math.random() * colors.length);
-            document.body.style.backgroundColor = colors[randomIndex];
-        }
+        // Rastgele arka plan resimleri
+        const backgrounds = [
+            'resim1.jpg', 'resim2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg',
+            'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg'
+        ];
 
-        // Belirli bir resmi göster/gizle ve arka plan rengini değiştir
-        function toggleImage(id, color) {
-            const img = document.getElementById(id);
-            if (img.style.display === "none" || img.style.display === "") {
-                img.style.display = "block";
-                document.body.style.backgroundColor = color;
+        // Sayfa yenilendiğinde rastgele bir arka plan resmi seç
+        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+
+        // Resimleri göster/gizle fonksiyonları
+        function toggleImage(index) {
+            const image = document.getElementById(`image${index}`);
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block';
             } else {
-                img.style.display = "none";
+                image.style.display = 'none';
             }
         }
-
-        // Sayfa yüklendiğinde rastgele arka plan rengini ayarla
-        window.onload = setRandomBackground;
     </script>
+
+    <div class="container">
+        <h1>Rastgele Arka Plan ve Resim Kontrolü</h1>
+
+        <div class="images">
+            <img id="image1" src="image1.jpg" alt="Resim 1">
+            <img id="image2" src="image2.jpg" alt="Resim 2">
+            <img id="image3" src="image3.jpg" alt="Resim 3">
+        </div>
+
+        <div class="buttons">
+            <button onclick="toggleImage(1)">Resim 1 Göster/Gizle</button>
+            <button onclick="toggleImage(2)">Resim 2 Göster/Gizle</button>
+            <button onclick="toggleImage(3)">Resim 3 Göster/Gizle</button>
+        </div>
+    </div>
 </body>
 </html>
 
