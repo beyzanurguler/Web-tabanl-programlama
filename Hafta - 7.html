@@ -50,6 +50,12 @@
             font-size: 1.2rem;
             color: #4a4a4a;
         }
+
+        img {
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -61,6 +67,8 @@
     <button onclick="document.getElementById('resim').src='Işık Resmi Açık.jpeg'">Turn on the light</button>
 
     <p>Press the buttons in order</p>
+
+    <img id="resim" src="Işık Resmi Kapalı.jpeg" style="width:100px">
 
     <button onclick="document.getElementById('resim').src='Işık Resmi Kapalı.jpeg'">Turn off the light</button>
 
